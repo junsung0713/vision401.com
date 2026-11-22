@@ -270,6 +270,7 @@ ul,ol{list-style:none}
 .pp-more>div{overflow:hidden}
 .pp.open .pp-more{grid-template-rows:1fr}
 .bio{padding:4px 0 40px}
+.bio-lead{font-size:20px;font-weight:800;letter-spacing:-.02em;margin-top:18px}
 .bio-h{font-size:clamp(26px,2.6vw,36px);font-weight:900;letter-spacing:-.04em;line-height:1.2;margin:30px 0 14px}
 .bio-list{border-top:2px solid var(--fg)}
 .bio-list>li{display:grid;grid-template-columns:136px minmax(0,1fr);column-gap:20px;align-items:baseline;padding:11px 0 10px;border-bottom:2px solid var(--fg);font-size:18px;font-weight:700;line-height:1.45}
@@ -742,7 +743,14 @@ ul,ol{list-style:none}
               <ol class="bio-list bio-dev"><li><b>21.10 – 22.01</b><span>마감임박 할인 플랫폼</span><i>BE / ADMIN page DEV</i></li><li><b>21.12 – 22.04</b><span>애완동물 지도 및 정보 플랫폼</span><i>BE / ADMIN page DEV</i></li><li><b>22.02 – 22.06</b><span>차량정비, 경매 플랫폼</span><i>BE / ADMIN page DEV</i></li><li><b>22.06 – 22.07</b><span>영어학원 페이지 리브랜딩</span><i>BE / ADMIN page DEV</i></li><li><b>22.07 – 23.06</b><span>K-POP 앨범 플랫폼</span><i>BE / ADMIN page DEV</i></li><li><b>23.12 – 26.03</b><span>자유여행 서비스 [여세요]</span><i>개발 총괄 및 서비스 총괄</i></li><li><b>25.05 – 26.01</b><span>미식 서비스 [별미]</span><i>개발 총괄 및 서비스 총괄</i></li><li><b>26.05 –</b><span>AI 산책경로 서비스 [마실]</span><i>개발 총괄</i></li><li><b>26.04 – 26.08</b><span>동물병원 진료차트 DX 벳츄원</span><i>Front-End Developer</i></li></ol>
             </div></div></div>
           </li>
-          <li class="rv" style="--d:90ms"><p class="p-name">한성준<small>CTO</small></p><p class="p-do">앱 · 웹 · 업무 자동화 개발</p></li>
+          <li class="rv pp" id="pp2" style="--d:90ms">
+            <button class="pp-head" type="button" aria-expanded="false" aria-controls="ppBio2"><span class="p-name">한성준<small>CTO</small></span><span class="p-do">웹/앱 풀스택 개발자</span><span class="pp-x" aria-hidden="true"></span></button>
+            <div class="pp-more" id="ppBio2" role="region" aria-label="한성준 약력"><div><div class="bio">
+              <p class="bio-lead">건국대학교 컴퓨터공학부 재학 중</p>
+              <h3 class="bio-h">약력</h3>
+              <ol class="bio-list"><li><b>2019</b><span>광덕고등학교 입학</span></li><li><b>2019–2020</b><span>광덕고등학교 로보틱스팀에서 로봇 설계 담당 · FIRST Tech Challenge Korea Championship Design Award 수상</span></li><li><b>2022</b><span>건국대학교 컴퓨터공학부 입학</span></li><li><b>2022</b><span>건국대학교 UMC 백엔드 스터디 참여 · 독서 기록 앱 LIBROG 백엔드 개발 및 출시</span></li><li><b>2022</b><span>아두이노 IoT 주차 요금 정산 시스템 외주 개발 - 서버/DB·API 전담</span></li><li><b>2023–2024</b><span>공군 정보체계관리단(현 지능정보체계관리단) 복무 - 사이버 관제 및 인트라넷 운영 - 2024년 11월 전역</span></li><li><b>2023</b><span>네트워크관리사 2급 취득 / 정보처리기능사(현 프로그래밍기능사) 최종 합격</span></li><li><b>2025</b><span>메뉴 기반 맛집 플랫폼 ‘별미’ Android/iOS 앱 개발 및 출시</span></li><li><b>2025</b><span>대학생 식단 앱 kulfood Android/iOS 출시, 주간 식단 등록 자동화</span></li><li><b>2025</b><span>건국대학교 KU창업클럽 활동 / 예비창업패키지 사전 인큐베이팅 프로그램 수료</span></li><li><b>2025</b><span>건국대학교 대동제 ‘별미’ 홍보 부스 운영 / 방문객 300명 이상 방문</span></li><li><b>2025</b><span>건국대학교 데이터 심화 과정 ‘머신러닝 활용’ 수료</span></li></ol>
+            </div></div></div>
+          </li>
         </ul>
         <ul class="stats" id="stats">
           <li><b><em data-count="6" style="font-style:normal">6</em><i>년차</i></b><span>경력</span></li>
@@ -1050,7 +1058,7 @@ $$('button',planSeg).forEach(function(b){b.addEventListener('click',function(){i
 
 /* ---------- 1 팀 ---------- */
 var teamNum=$('#teamNum'),pp=$('#pp'),ppBtn=pp&&$('.pp-head',pp);
-if(ppBtn)ppBtn.addEventListener('click',function(){var open=!pp.classList.contains('open');pp.classList.toggle('open',open);ppBtn.setAttribute('aria-expanded',String(open))});
+$$('.pp').forEach(function(p){var b=$('.pp-head',p);if(b)b.addEventListener('click',function(){var open=!p.classList.contains('open');p.classList.toggle('open',open);b.setAttribute('aria-expanded',String(open))})});
 $$('.bio-acc').forEach(function(li){var b=$('.bio-head',li);b.addEventListener('click',function(){var open=!li.classList.contains('open');li.classList.toggle('open',open);b.setAttribute('aria-expanded',String(open))})});
 function teamFrame(){
   var r=secs[5]._r;if(r.bottom<0||r.top>vh||RM)return;
