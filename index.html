@@ -272,10 +272,28 @@ ul,ol{list-style:none}
 .bio{padding:4px 0 40px}
 .bio-h{font-size:clamp(26px,2.6vw,36px);font-weight:900;letter-spacing:-.04em;line-height:1.2;margin:30px 0 14px}
 .bio-list{border-top:2px solid var(--fg)}
-.bio-list li{display:grid;grid-template-columns:136px minmax(0,1fr);column-gap:20px;align-items:baseline;padding:11px 0 10px;border-bottom:2px solid var(--fg);font-size:18px;font-weight:700;line-height:1.45}
+.bio-list>li{display:grid;grid-template-columns:136px minmax(0,1fr);column-gap:20px;align-items:baseline;padding:11px 0 10px;border-bottom:2px solid var(--fg);font-size:18px;font-weight:700;line-height:1.45}
 .bio-list b{font-family:var(--en);font-stretch:100%;font-size:18px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
-.bio-dev li{grid-template-columns:136px minmax(0,1fr) auto}
+.bio-dev>li{grid-template-columns:136px minmax(0,1fr) auto}
 .bio-dev i{font-style:normal;font-weight:600;text-align:right;white-space:nowrap}
+.bio-list>li.bio-acc{display:block;padding:0}
+.bio-head{display:grid;grid-template-columns:136px minmax(0,1fr) 36px;column-gap:20px;align-items:center;width:100%;padding:9px 0 8px;text-align:left;font-size:18px;font-weight:700;line-height:1.45}
+.bio-x{position:relative;width:36px;height:36px;border:2px solid var(--fg);border-radius:50%;transition:transform .55s var(--pop),background-color .3s}
+.bio-x::before,.bio-x::after{content:"";position:absolute;left:8px;right:8px;top:15px;height:2.5px;background:var(--fg);transition:background-color .3s}
+.bio-x::after{transform:rotate(90deg)}
+.bio-head:hover .bio-x,.bio-head:focus-visible .bio-x{background:var(--fg)}
+.bio-head:hover .bio-x::before,.bio-head:hover .bio-x::after,.bio-head:focus-visible .bio-x::before,.bio-head:focus-visible .bio-x::after{background:var(--bg)}
+.bio-acc.open .bio-x{transform:rotate(135deg)}
+.bio-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.bio-more>div{overflow:hidden;padding-left:156px}
+.bio-acc.open .bio-more{grid-template-rows:1fr}
+.bio-sub-k{font-size:15px;font-weight:800;margin:4px 0 8px}
+.bio-sub{border-top:2px solid var(--fg)}
+.bio-sub li{display:grid;grid-template-columns:128px minmax(0,1fr) auto;column-gap:16px;align-items:baseline;padding:9px 0 8px;border-bottom:2px solid var(--fg);font-size:17px;font-weight:700;line-height:1.45}
+.bio-sub b{font-size:16px}
+.bio-sub i{font-style:normal;font-weight:600;text-align:right;white-space:nowrap}
+.bio-link{display:inline-flex;align-items:center;gap:8px;margin:14px 0 18px;font-size:17px;font-weight:800;border-bottom:2px solid currentColor}
+.bio-link svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .p-name{font-size:clamp(52px,7.4vw,112px);font-weight:900;letter-spacing:-.06em;line-height:1.05}
 .p-name small{font-size:max(.24em,17px);font-weight:800;letter-spacing:-.02em;margin-left:.5em}
 .p-do{text-align:right;font-size:20px;font-weight:800;line-height:1.35;padding-bottom:12px}
@@ -368,7 +386,13 @@ ul,ol{list-style:none}
   .pp-head{grid-template-columns:minmax(0,1fr) 56px;row-gap:4px}
   .pp-head .p-do{grid-column:1;grid-row:2;text-align:left;padding-bottom:0}
   .pp-x{grid-column:2;grid-row:1 / span 2}
-  .bio-list li,.bio-dev li{grid-template-columns:100px minmax(0,1fr);column-gap:12px;font-size:16px}
+  .bio-list>li,.bio-dev>li{grid-template-columns:100px minmax(0,1fr);column-gap:12px;font-size:16px}
+  .bio-head{grid-template-columns:100px minmax(0,1fr) 32px;column-gap:12px;font-size:16px}
+  .bio-x{width:32px;height:32px}
+  .bio-x::before,.bio-x::after{left:7px;right:7px;top:13px}
+  .bio-more>div{padding-left:0}
+  .bio-sub li{grid-template-columns:100px minmax(0,1fr);column-gap:12px;font-size:16px}
+  .bio-sub i{grid-column:2;text-align:left;white-space:normal}
   .bio-list b{font-size:15px;white-space:normal}
   .bio-dev i{grid-column:2;text-align:left;white-space:normal}
   .p-do{text-align:left;padding-bottom:0}
@@ -713,7 +737,7 @@ ul,ol{list-style:none}
             <button class="pp-head" type="button" aria-expanded="false" aria-controls="ppBio"><span class="p-name">박준성<small>대표</small></span><span class="p-do">PM · 개발 · 서버 운영</span><span class="pp-x" aria-hidden="true"></span></button>
             <div class="pp-more" id="ppBio" role="region" aria-label="박준성 약력"><div><div class="bio">
               <h3 class="bio-h">약력</h3>
-              <ol class="bio-list"><li><b>2019</b><span>한양공업고등학교 컴퓨터네트워크과 입학</span></li><li><b>2019</b><span>한양공업고등학교 최초 전과목 만점 / 전액 장학금</span></li><li><b>2021</b><span>‘서대문구청소년참여위원회’ 위원장</span></li><li><b>2021</b><span>한양공업고등학교 학생회 총무부장</span></li><li><b>2021</b><span>(주) 인베스티 - 최연소 Developer Manager</span></li><li><b>2021</b><span>한양공업고등학교 컴퓨터네트워크과 최우수 학생</span></li><li><b>2022.03</b><span>건국대학교 컴퓨터공학부 입학</span></li><li><b>2023–2025</b><span>공군본부 지능정보체계관리단 사이버체계관리병 병장 만기전역</span></li><li><b>2024–2025</b><span>여행 세줄 요약 ‘여세요’ 기획 총괄</span></li><li><b>2025</b><span>건국대학교 예비창업패키지 프리인큐베이팅 과정 수료 (미식가들을 위한 맛집 서비스 - 별미)</span></li><li><b>2026</b><span>건국대학교 ‘서울시 IP캠프 아이디어톤’ 대상 수상</span></li><li><b>2026.03–08</b><span>건국대학교 학생 창업팀 [VetU1] 참여</span></li><li><b>2026</b><span>학생 창업 유망팀 ‘U300’ 본선 진출</span></li><li><b>2026</b><span>서울 청년기획 봉사단 3기 (한강 연계 프로젝트)</span></li><li><b>2026</b><span>전국민 AI 경진대회 ‘AI Rookie’ 결승 진출</span></li><li><b>2026</b><span>건국대학교 ‘글로벌 스타트업 프론티어’ 3기 회장</span></li><li><b>2026</b><span>ERP, AX 전문 소프트웨어 공급 업체 ‘Vision401’ 창업</span></li></ol>
+              <ol class="bio-list"><li><b>2019</b><span>한양공업고등학교 컴퓨터네트워크과 입학</span></li><li><b>2019</b><span>한양공업고등학교 최초 전과목 만점 / 전액 장학금</span></li><li><b>2021</b><span>‘서대문구청소년참여위원회’ 위원장</span></li><li><b>2021</b><span>한양공업고등학교 학생회 총무부장</span></li><li class="bio-acc" id="bioInvRow"><button class="bio-head" type="button" aria-expanded="false" aria-controls="bioInv"><b>2021</b><span>(주) 인베스티 - 최연소 Developer Manager</span><i class="bio-x" aria-hidden="true"></i></button><div class="bio-more" id="bioInv" role="region" aria-label="인베스티 포트폴리오"><div><p class="bio-sub-k">인베스티에서 맡은 플랫폼 5종</p><ol class="bio-sub"><li><b>21.10 – 22.01</b><span>마감임박 할인 플랫폼</span><i>BE / ADMIN page DEV</i></li><li><b>21.12 – 22.04</b><span>애완동물 지도 및 정보 플랫폼</span><i>BE / ADMIN page DEV</i></li><li><b>22.02 – 22.06</b><span>차량정비, 경매 플랫폼</span><i>BE / ADMIN page DEV</i></li><li><b>22.06 – 22.07</b><span>영어학원 페이지 리브랜딩</span><i>BE / ADMIN page DEV</i></li><li><b>22.07 – 23.06</b><span>K-POP 앨범 플랫폼</span><i>BE / ADMIN page DEV</i></li></ol><a class="bio-link" href="#work/investy">인베스티 작업 자세히 보기<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></li><li><b>2021</b><span>한양공업고등학교 컴퓨터네트워크과 최우수 학생</span></li><li><b>2022.03</b><span>건국대학교 컴퓨터공학부 입학</span></li><li><b>2023–2025</b><span>공군본부 지능정보체계관리단 사이버체계관리병 병장 만기전역</span></li><li><b>2024–2025</b><span>여행 세줄 요약 ‘여세요’ 기획 총괄</span></li><li><b>2025</b><span>건국대학교 예비창업패키지 프리인큐베이팅 과정 수료 (미식가들을 위한 맛집 서비스 - 별미)</span></li><li><b>2026</b><span>건국대학교 ‘서울시 IP캠프 아이디어톤’ 대상 수상</span></li><li><b>2026.03–08</b><span>건국대학교 학생 창업팀 [VetU1] 참여</span></li><li><b>2026</b><span>학생 창업 유망팀 ‘U300’ 본선 진출</span></li><li><b>2026</b><span>서울 청년기획 봉사단 3기 (한강 연계 프로젝트)</span></li><li><b>2026</b><span>전국민 AI 경진대회 ‘AI Rookie’ 결승 진출</span></li><li><b>2026</b><span>건국대학교 ‘글로벌 스타트업 프론티어’ 3기 회장</span></li><li><b>2026</b><span>ERP, AX 전문 소프트웨어 공급 업체 ‘Vision401’ 창업</span></li></ol>
               <h3 class="bio-h">개발 포트폴리오</h3>
               <ol class="bio-list bio-dev"><li><b>21.10 – 22.01</b><span>마감임박 할인 플랫폼</span><i>BE / ADMIN page DEV</i></li><li><b>21.12 – 22.04</b><span>애완동물 지도 및 정보 플랫폼</span><i>BE / ADMIN page DEV</i></li><li><b>22.02 – 22.06</b><span>차량정비, 경매 플랫폼</span><i>BE / ADMIN page DEV</i></li><li><b>22.06 – 22.07</b><span>영어학원 페이지 리브랜딩</span><i>BE / ADMIN page DEV</i></li><li><b>22.07 – 23.06</b><span>K-POP 앨범 플랫폼</span><i>BE / ADMIN page DEV</i></li><li><b>23.12 – 26.03</b><span>자유여행 서비스 [여세요]</span><i>개발 총괄 및 서비스 총괄</i></li><li><b>25.05 – 26.01</b><span>미식 서비스 [별미]</span><i>개발 총괄 및 서비스 총괄</i></li><li><b>26.05 –</b><span>AI 산책경로 서비스 [마실]</span><i>개발 총괄</i></li><li><b>26.04 – 26.08</b><span>동물병원 진료차트 DX 벳츄원</span><i>Front-End Developer</i></li></ol>
             </div></div></div>
@@ -1027,6 +1051,7 @@ $$('button',planSeg).forEach(function(b){b.addEventListener('click',function(){i
 /* ---------- 1 팀 ---------- */
 var teamNum=$('#teamNum'),pp=$('#pp'),ppBtn=pp&&$('.pp-head',pp);
 if(ppBtn)ppBtn.addEventListener('click',function(){var open=!pp.classList.contains('open');pp.classList.toggle('open',open);ppBtn.setAttribute('aria-expanded',String(open))});
+$$('.bio-acc').forEach(function(li){var b=$('.bio-head',li);b.addEventListener('click',function(){var open=!li.classList.contains('open');li.classList.toggle('open',open);b.setAttribute('aria-expanded',String(open))})});
 function teamFrame(){
   var r=secs[5]._r;if(r.bottom<0||r.top>vh||RM)return;
   var q=clamp((vh-r.top)/(vh+Math.min(r.height,vh)),0,1);
