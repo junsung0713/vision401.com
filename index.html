@@ -429,7 +429,7 @@ ul,ol{list-style:none}
 .cs-close:hover,.cs-close:focus-visible{background:var(--k);color:var(--i);border-color:var(--k)}
 
 /* 1 첫 띠: 주황 바탕, 이름 64px, 한 줄 소개 40px. 대표 화면이 띠 아래 끝에 40% 걸침 */
-.cs-band{background:var(--o);color:var(--k);padding-top:168px;padding-bottom:182px}
+.cs-band{background:var(--o);color:var(--k);padding-top:168px;padding-bottom:238px}
 .cs-over{grid-column:1 / 13;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:18px;font-weight:700;margin-bottom:26px}
 .cs-over span+span::before{content:"";display:inline-block;width:5px;height:5px;margin:0 16px 3px 0;border-radius:50%;background:currentColor;vertical-align:middle}
 .cs-title{grid-column:1 / 13;font-size:64px;font-weight:800;line-height:1.1;letter-spacing:-.035em}
@@ -517,6 +517,10 @@ ul,ol{list-style:none}
 .cs-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding:0 0 36px;font-size:15px;font-weight:600}
 .cs-foot b{font-family:var(--en);font-weight:900;font-stretch:125%;font-size:18px}
 
+/* 줄바꿈: 제목은 줄 길이를 고르게, 본문은 마지막 줄에 한 단어만 남지 않게 */
+.cs-title,.cs-pitch,.cs-state,.cs-next-t strong,.cs-visit a{text-wrap:balance}
+.cs-body,.cs-rows li>span,.cs-fwhy li,.cs-res span,.cs-meta dd,.cs-next-t span{text-wrap:pretty}
+
 /* 움직임: 띠 글자는 24px 올라오며, 화면은 15% 보이면 한 번 24px, 글은 16px. 확대·기울임 없음 */
 .cs .rvb{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.16,1,.3,1) var(--d,0s),transform .6s cubic-bezier(.16,1,.3,1) var(--d,0s)}
 .cs.in .rvb{opacity:1;transform:none}
@@ -539,7 +543,7 @@ ul,ol{list-style:none}
   .cs-wm{font-size:17px}
   .cs-nav{gap:14px}
   .cs-close{height:38px;padding:0 14px;font-size:15px}
-  .cs-band{padding-top:104px;padding-bottom:40px}
+  .cs-band{padding-top:104px;padding-bottom:72px}
   .cs-over{font-size:15px;margin-bottom:18px}
   .cs-title{font-size:40px;line-height:1.15}
   .cs-pitch{grid-column:1 / 13;font-size:22px;line-height:1.4;margin-top:12px}
