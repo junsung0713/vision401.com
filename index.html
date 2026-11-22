@@ -474,12 +474,7 @@ ul,ol{list-style:none}
 .cs-pair .cs-panel{padding:56px 40px}
 .cs-fig figcaption{margin-top:12px;font-size:15px;font-weight:600;color:var(--mut)}
 
-/* 5 성과: 큰 숫자 2x2 */
-.cs-res{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px;row-gap:64px}
-.cs-res b{display:block;font-family:var(--en);font-stretch:100%;font-size:clamp(60px,7vw,100px);font-weight:700;line-height:1;letter-spacing:-.045em;font-variant-numeric:tabular-nums;white-space:nowrap}
-.cs-res b.kr{font-family:var(--kr);font-size:clamp(44px,5.2vw,76px);letter-spacing:-.05em}
-.cs-res b i{font-family:var(--kr);font-style:normal;font-size:max(15px,.28em);font-weight:700;letter-spacing:-.02em;margin-left:.12em}
-.cs-res span{display:block;max-width:300px;margin-top:16px;font-size:17px;font-weight:600;line-height:1.65}
+/* 보충 설명 한 줄 */
 .cs-note{margin-top:28px;font-size:15px;font-weight:600;color:var(--mut)}
 
 /* 6 글씨체: 판마다 글꼴 이름을 그 글꼴로 */
@@ -519,7 +514,7 @@ ul,ol{list-style:none}
 
 /* 줄바꿈: 제목은 줄 길이를 고르게, 본문은 마지막 줄에 한 단어만 남지 않게 */
 .cs-title,.cs-pitch,.cs-state,.cs-next-t strong,.cs-visit a{text-wrap:balance}
-.cs-body,.cs-rows li>span,.cs-fwhy li,.cs-res span,.cs-meta dd,.cs-next-t span{text-wrap:pretty}
+.cs-body,.cs-rows li>span,.cs-fwhy li,.cs-meta dd,.cs-next-t span{text-wrap:pretty}
 
 /* 움직임: 띠 글자는 24px 올라오며, 화면은 15% 보이면 한 번 24px, 글은 16px. 확대·기울임 없음 */
 .cs .rvb{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.16,1,.3,1) var(--d,0s),transform .6s cubic-bezier(.16,1,.3,1) var(--d,0s)}
@@ -572,10 +567,6 @@ ul,ol{list-style:none}
   .cs-panel img.promo{max-height:none;max-width:none;width:calc((100% - 10px) / 2);border-radius:8px}
   .cs-panel.promos.one img.promo{width:70%}
   .cs-panel.promos{flex-wrap:wrap}
-  .cs-res{grid-template-columns:minmax(0,1fr);row-gap:32px}
-  .cs-res b{font-size:64px}
-  .cs-res b.kr{font-size:44px}
-  .cs-res span{max-width:none;font-size:16px;line-height:1.55;margin-top:10px}
   .cs-pp{font-size:15px}
   .cs-font{padding:24px 20px}
   .cs-fn{font-size:34px}
@@ -1277,9 +1268,6 @@ function csHTML(c){
   }
   h+=csSec(c.approachTitle||'한 일',csRows(c.approach));
   h+=csMedia(c);
-  if(c.results&&c.results.length){
-    h+=csSec('성과','<div class="cs-res">'+c.results.map(function(r,k){return '<div class="rv3" style="--d:'+(k*.06)+'s"><b class="'+(/[가-힣]/.test(r.num)?'kr':'')+'">'+esc(r.num)+(r.unit?'<i>'+esc(r.unit)+'</i>':'')+'</b><span>'+esc(r.label)+'</span></div>'}).join('')+'</div>'+(c.resultsNote?'<p class="cs-note">'+esc(c.resultsNote)+'</p>':''));
-  }
   if(c.typography&&c.typography.length)h+=csSec('글씨체',c.typography.map(csFont).join('')+'<p class="cs-note">'+esc(c.typeNote||'실제 화면에서 쓰는 글꼴을 확인하고, 그 글꼴의 성질로 선정 이유를 정리했습니다.')+'</p>');
   if(c.colors&&c.colors.length){var cl=c.colors.slice(0,6);h+=csSec('색','<ul class="cs-sw rvi" style="--n:'+cl.length+'">'+cl.map(function(k){return '<li><i style="--c:'+esc(k.hex)+'"></i><b>'+esc(k.hex)+'</b><span>'+esc(k.name)+'</span></li>'}).join('')+'</ul>')}
   var site=links.filter(function(l){return !/apps\.apple|play\.google|web\.archive|instagram/.test(l.url)})[0];
