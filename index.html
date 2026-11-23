@@ -342,7 +342,7 @@ ul,ol{list-style:none}
    명함 실물 비율 90×50(가로), 휴대폰에서는 세로 명함. 글자 크기는 명함 폭 기준(cqi)이라 어느 화면에서나 실물 비례 그대로 */
 .bc-stage{position:relative;width:100%;max-width:max(440px,calc((100vh - 230px) * 1.796));max-width:max(440px,calc((100svh - 230px) * 1.796));margin:64px auto 0;perspective:2400px;perspective-origin:50% 30%}
 .bc{position:relative;width:100%;aspect-ratio:1681 / 936;transform-style:preserve-3d;cursor:pointer;-webkit-tap-highlight-color:transparent;will-change:transform}
-.bc-face{position:absolute;left:0;top:0;right:0;bottom:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:6px;overflow:hidden;container-type:inline-size}
+.bc-face{position:absolute;left:0;top:0;right:0;bottom:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:0;overflow:hidden;container-type:inline-size}
 .bc-front{background:var(--o);color:var(--k)}
 .bc-back{background:var(--i);color:var(--k);transform:rotateY(180deg)}
 /* 앞면 */
@@ -351,18 +351,21 @@ ul,ol{list-style:none}
 .bc-wm .v{font-size:var(--wv)}
 .bc-wm .n{font-size:var(--wn);margin-top:var(--wg)}
 .bc-sd{position:absolute;right:var(--sr);bottom:var(--sb);margin:0;font-family:var(--kr);font-weight:800;font-size:var(--ss);line-height:1.08;letter-spacing:-.02em;text-align:left}
-/* 뒷면 */
-.bc-id{position:absolute;left:var(--bl);top:var(--bt);margin:0}
-.bc-kr{display:block;font-family:var(--kr);font-weight:900;font-size:var(--nk);line-height:1;letter-spacing:-.045em;margin-left:-.03em}
-.bc-en{display:block;font-family:var(--kr);font-weight:800;font-size:var(--ne);line-height:1.1;letter-spacing:-.025em;margin-top:var(--ng)}
-.bc-role{display:block;font-family:var(--kr);font-weight:800;font-size:var(--nr);line-height:1.15;letter-spacing:-.02em}
-.bc-ct{position:absolute;left:var(--bl);bottom:var(--bb);margin:0}
-.bc-ct a{display:block;width:max-content;font-family:var(--kr);font-weight:800;font-size:var(--cs);line-height:1.28;letter-spacing:-.015em;color:inherit;text-decoration:none}
-.bc-ct a:hover,.bc-ct a:focus-visible{text-decoration:underline;text-underline-offset:.14em;text-decoration-thickness:.08em}
-.bc-tag{position:absolute;right:var(--bl);bottom:var(--tb);padding:var(--tp);background:var(--o);color:var(--k);font-family:'Archivo',sans-serif;font-weight:900;font-stretch:100%;font-size:var(--ts);line-height:1;letter-spacing:-.005em;white-space:nowrap}
+/* 뒷면: 그가 보낸 명함(11/22 21:40 스크린샷) 비율 그대로. 줄마다 위치를 명함 폭 기준으로 고정 */
+.bc-back{background:#F4F0E5}
+.bc-kr,.bc-en,.bc-role,.bc-ph,.bc-em{position:absolute;left:var(--bl);margin:0;line-height:1;white-space:nowrap;color:var(--k);font-family:var(--kr)}
+.bc-kr{top:var(--kt);font-size:var(--nk);font-weight:900;letter-spacing:-.04em;margin-left:-.035em}
+.bc-en{top:var(--et);font-size:var(--ne);font-weight:800;letter-spacing:-.022em}
+.bc-role{top:var(--rt);font-size:var(--nr);font-weight:700;letter-spacing:-.018em}
+.bc-ph,.bc-em{font-weight:700;letter-spacing:-.012em;text-decoration:none}
+.bc-ph{top:var(--pt);font-size:var(--cp)}
+.bc-em{top:var(--mt);font-size:var(--cm)}
+.bc-ph:hover,.bc-em:hover,.bc-ph:focus-visible,.bc-em:focus-visible{text-decoration:underline;text-underline-offset:.14em;text-decoration-thickness:.08em}
+.bc-tag{position:absolute;right:var(--tr);top:var(--tt);padding:var(--tp);background:#FF2E1E;color:var(--k);font-family:'Archivo',sans-serif;font-weight:900;font-stretch:100%;font-size:var(--ts);line-height:1;letter-spacing:-.01em;white-space:nowrap}
 /* 가로 명함 치수 (명함 폭 대비 %) */
 .bc{--wl:4.6cqi;--wt:5cqi;--wv:14.9cqi;--wn:29.2cqi;--wg:1.2cqi;--sr:2.6cqi;--sb:3.2cqi;--ss:4.1cqi;
-  --bl:4.6cqi;--bt:4.4cqi;--nk:17cqi;--ne:6.4cqi;--ng:1.4cqi;--nr:4.8cqi;--bb:4.6cqi;--cs:4.36cqi;--tb:5cqi;--tp:.6cqi 1.1cqi .55cqi;--ts:3.2cqi}
+  --bl:4cqi;--kt:3.38cqi;--nk:18.5cqi;--et:21.23cqi;--ne:6.7cqi;--rt:27.93cqi;--nr:5.35cqi;--pt:40.74cqi;--cp:4.15cqi;--mt:45.51cqi;--cm:4.46cqi;
+  --tr:5.1cqi;--tt:46.1cqi;--tp:.66cqi 1.1cqi .51cqi 1.3cqi;--ts:2.59cqi}
 .bc-hint{display:flex;justify-content:flex-end;align-items:center;gap:14px;margin-top:16px}
 .bc-flip{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border:2px solid currentColor;border-radius:42px;font-size:15px;font-weight:800;color:inherit;background:none;cursor:pointer;transition:background-color .25s,color .25s}
 .bc-flip svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
@@ -372,10 +375,9 @@ ul,ol{list-style:none}
   .bc-stage{max-width:calc((100vh - 210px) * .557);max-width:calc((100svh - 210px) * .557);margin-top:44px;perspective:1600px}
   .bc{aspect-ratio:936 / 1681;
     --wl:2.4cqi;--wt:3cqi;--wv:34.5cqi;--wn:70.4cqi;--wg:2cqi;--sr:auto;--sb:6cqi;--ss:7.2cqi;
-    --bl:7cqi;--bt:8cqi;--nk:26.5cqi;--ne:10.4cqi;--ng:2.6cqi;--nr:7.8cqi;--bb:8cqi;--cs:7.4cqi;--tb:8cqi;--tp:1cqi 2cqi;--ts:4.4cqi}
+    --bl:7cqi;--kt:9cqi;--nk:26.5cqi;--et:38cqi;--ne:10.2cqi;--rt:49.5cqi;--nr:7.8cqi;--pt:135cqi;--cp:6.9cqi;--mt:144.2cqi;--cm:7.4cqi;--tr:7cqi;--tt:165.4cqi;--tp:1.2cqi 2cqi 1cqi 2.3cqi;--ts:4.6cqi}
   .bc-wm{font-stretch:62%;line-height:.8;letter-spacing:-.005em}
   .bc-sd{left:6cqi;right:auto}
-  .bc-tag{display:none}
 }
 
 
@@ -825,7 +827,7 @@ ul,ol{list-style:none}
       </div>
     </div>
     <div class="wrap">
-      <div class="bc-stage" id="bcStage"><div class="bc" id="bc" role="group" aria-label="Vision401 명함"><div class="bc-face bc-front" aria-hidden="true"><p class="bc-wm"><span class="v">VISION</span><span class="n">401</span></p><p class="bc-sd">Software<br>Development</p></div><div class="bc-face bc-back"><p class="bc-id"><span class="bc-kr">박준성</span><span class="bc-en">Junsung Park</span><span class="bc-role">대표</span></p><p class="bc-ct"><a href="tel:+821088164958">+82) 10-8816-4958</a><a href="mailto:junsung@vision401.com">junsung@vision401.com</a></p><span class="bc-tag" aria-hidden="true">VISION 401</span></div></div><div class="bc-hint"><button class="bc-flip" id="bcFlip" type="button">명함 뒤집기<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.6M20 12a8 8 0 0 1-13.7 5.6M18 3v4h-4M6 21v-4h4"/></svg></button></div></div>
+      <div class="bc-stage" id="bcStage"><div class="bc" id="bc" role="group" aria-label="Vision401 명함"><div class="bc-face bc-front" aria-hidden="true"><p class="bc-wm"><span class="v">VISION</span><span class="n">401</span></p><p class="bc-sd">Software<br>Development</p></div><div class="bc-face bc-back"><span class="bc-kr">박준성</span><span class="bc-en">Junsung Park</span><span class="bc-role">Developer</span><a class="bc-ph" href="tel:+821088164958">+82) 10-8816-4958</a><a class="bc-em" href="mailto:junsung@vision401.com">junsung@vision401.com</a><span class="bc-tag" aria-hidden="true">VISION 401</span></div></div><div class="bc-hint"><button class="bc-flip" id="bcFlip" type="button">명함 뒤집기<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.6M20 12a8 8 0 0 1-13.7 5.6M18 3v4h-4M6 21v-4h4"/></svg></button></div></div>
       <footer class="ft"><ul class="ft-biz" aria-label="사업자 정보"><li><span>상호</span>비전401</li><li><span>대표</span>박준성</li><li><span>사업자등록번호</span>560-34-01976</li></ul><p class="ft-copy"><span>© 2026 Vision401</span><span>vision401.com</span></p></footer>
     </div>
   </section>
