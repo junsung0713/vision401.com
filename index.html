@@ -340,7 +340,7 @@ ul,ol{list-style:none}
 
 /* ---------- 맨 아래 명함: 앞면(주황, VISION 401) → 끝까지 내리면 뒷면(아이보리, 연락처)으로 뒤집힘
    명함 실물 비율 90×50(가로), 휴대폰에서는 세로 명함. 글자 크기는 명함 폭 기준(cqi)이라 어느 화면에서나 실물 비례 그대로 */
-.bc-stage{position:relative;width:100%;max-width:calc((100vh - 230px) * 1.796);max-width:calc((100svh - 230px) * 1.796);margin:64px auto 0;perspective:2400px;perspective-origin:50% 30%}
+.bc-stage{position:relative;width:100%;max-width:max(440px,calc((100vh - 230px) * 1.796));max-width:max(440px,calc((100svh - 230px) * 1.796));margin:64px auto 0;perspective:2400px;perspective-origin:50% 30%}
 .bc{position:relative;width:100%;aspect-ratio:1681 / 936;transform-style:preserve-3d;cursor:pointer;-webkit-tap-highlight-color:transparent;will-change:transform}
 .bc-face{position:absolute;left:0;top:0;right:0;bottom:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:6px;overflow:hidden;container-type:inline-size}
 .bc-front{background:var(--o);color:var(--k)}
