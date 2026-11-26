@@ -10,8 +10,8 @@
 
 ## 서비스
 
-- 웹사이트(홈페이지) 제작·리뉴얼: 디자인 리뉴얼, 핵심 수정사항 반영. 구축 LITE부터 포함, 45±15일.
-- ERP·백오피스 개발: 사이트 운영을 위한 백오피스. MVP는 운영에 필요한 화면부터(구축 STANDARD), TOTAL은 기존 시스템 전 기능 이관(구축 DELUXE).
+- [웹사이트(홈페이지) 제작·리뉴얼](https://vision401.com/services/website-renewal/): 디자인 리뉴얼, 핵심 수정사항 반영. 구축 LITE부터 포함, 45±15일.
+- [ERP·백오피스 개발](https://vision401.com/services/erp-development/): 사이트 운영을 위한 백오피스. MVP는 운영에 필요한 화면부터(구축 STANDARD), TOTAL은 기존 시스템 전 기능 이관(구축 DELUXE).
 - DX 업무 자동화: 업무 자동화, 업무 채널 연결. 구축 DELUXE에 포함.
 - AX AI 전환: 고객 챗봇, 백오피스 챗봇. RAG 방식. AI API 사용료는 실비. 운영 PREMIUM +AI에서 제공.
 
@@ -42,13 +42,13 @@
 
 ## 작업 (대표와 팀의 수행 이력)
 
-- 물드림: 의류 재제조 브랜드. 사이트 개발·운영 (2026.08 –)
-- 벳츄원: 동물병원 차트(EMR), 비전 AI 입원 모니터링. 건국대학교 학생 창업팀 (2026.03–08)
-- 인베스티: 플랫폼 5종. Dev Manager (2021.09–2023.06)
-- 별미: 메뉴 기반 맛집 플랫폼. 개발·서비스 총괄 (2025.05–2026.01)
-- kulfood: 대학생 식단 정보 앱. 앱 출시 (2025.07)
-- pmpt.sh: AI 프롬프트 공유 플랫폼. 풀스택 개발 (2026)
-- AirLinking: 링크 저장 · 북마크 공유 웹 서비스
+- [물드림](https://vision401.com/work/muldream/): 의류 재제조 브랜드. 사이트 개발·운영 (2026.08 –)
+- [벳츄원](https://vision401.com/work/vetu1/): 건국대학교 학생 창업팀 참여 (2026.03–08). 박준성은 VetSync 전자차트 프론트엔드를 담당.
+- [인베스티](https://vision401.com/work/investy/): 박준성 대표의 재직 당시 플랫폼 5종 백엔드·관리자 개발 (2021.09–2023.06)
+- [별미](https://vision401.com/work/byeolmi/): 메뉴 기반 맛집 플랫폼. 개발·서비스 총괄 (2025.05–2026.01)
+- [kulfood](https://vision401.com/work/kulfood/): 대학생 식단 정보 앱. 앱 출시 (2025.07)
+- [pmpt.sh](https://vision401.com/work/pmpt/): AI 프롬프트 공유 플랫폼. 풀스택 개발 (2026)
+- [AirLinking](https://vision401.com/work/airlinking/): 링크 저장 · 북마크 공유 웹 서비스
 
 ## 팀
 
